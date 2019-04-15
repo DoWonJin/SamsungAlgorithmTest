@@ -36,3 +36,37 @@ alt text
 
 출처
 한국정보올림피아드 KOI 2006 본선 초등부1번
+
+#include <stdio.h>
+
+
+
+int main() {
+
+	int i, j;
+	int st_num;
+	int arry[1000][5];
+	int count[1000] = { 0 };
+	scanf("%d", &st_num);
+	for (int i = 0;i < st_num;i++)
+		for (int j = 0;j < 5;j++)
+			scanf("%d", *(arry + i) + j);
+
+	for (int i = 0;i < st_num;i++) {
+		for (int j = 0;j < st_num;j++) {
+			if (j == i)continue;
+			for (int k = 0; k < 5; k++) {
+				if (arry[j][k] == arry[i][k]) {
+					count[i]++;
+					break;
+				}
+			}
+		}
+	}
+	int max_idx = 0;
+	for (int i = 0;i < st_num;i++)
+		if (count[max_idx] < count[i])max_idx = i;
+	printf("%d\n", max_idx + 1);
+
+	return 0;
+}
