@@ -5,9 +5,9 @@ struct PriorityQueue {
 	//트리에서 0번은 안쓰고 1번부터 ~n번까지 쓰임
 	/*
 		1
-	2		3
-  4   5   6   7
-8   9
+	  2	      3
+      4       5   6       7
+   8     9
 
 */
 	int data[MAX];
